@@ -41,8 +41,8 @@ jobs:
         with:
           arguments: shadowJar
 
-      #- name: Validate dataset from -- ACRONYM #<-- uncomment this line, replace ACRONYM by the name of the agency/publisher acronym
-      #  run: java -jar application/cli-app/build/libs/*.jar --url DATASET_PUBLIC_URL --input [[[ACRONYM]]].zip --extract pathToExtractedZipContent --output validationResultDirectory #<-- uncomment this line,
+      - name: Validate dataset from -- exo-train #<-- uncomment this line, replace ACRONYM by the name of the agency/publisher acronym
+        run: java -jar application/cli-app/build/libs/*.jar --url https://exo.quebec/xdata/trains/google_transit.zip --input exotrain.zip --extract pathToExtractedZipContent --output validationResultDirectory #<-- uncomment this line,
 #replace ACRONYM and [[[ACRONYM]]] by the agency/publisher acronym. Also replace DATASET_PUBLIC_URL by a public link to a GTFS Schedule zip archive
       - name: Validate dataset from -- SMART
         run: java -jar application/cli-app/build/libs/*.jar --url http://transitfeeds.com/p/sonoma-marin-area-rail-transit/1050/20200930/download --input smart.zip --extract input --output output
